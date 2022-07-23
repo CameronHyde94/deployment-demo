@@ -8,7 +8,7 @@ app.use(express.json());
 
 //Middleware 
 app.use(express.static(path.join(__dirname, "../public")));
-// app.use("/images", express.static(path.join(__dirname, "../images")));
+app.use("/images", express.static(path.join(__dirname, "../images")));
 
 //Endpoints
 // app.get("/js", function(req, res) {
