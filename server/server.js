@@ -6,8 +6,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../index.html"));
+//Middleware 
+app.use(express.static(path.join(__dirname, "../public")));
+app.use("/images", express.static(path.join(__dirname, "../images")));
+
+app.get("/js", function(req, res) {
+    res.sendFile(path.join(__dirname, "../server.js"));
 });
 
 const port = process.env.PORT || 4006;
